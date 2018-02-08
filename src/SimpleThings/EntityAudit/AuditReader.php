@@ -448,7 +448,6 @@ class AuditReader
                                 $value = null;
                             } catch (NoRevisionFoundException $e) {
                                 // The entity does not have any revision yet. So let's get the actual state of it.
-                                $value = $this->em->getRepository($targetClass->name)->findOneBy($pf);
                                 $mappings = $this->em->getClassMetadata($assoc['targetEntity']);
                                 $criteria = array();
                                 foreach ($pf as $columnName => $value) {                            		
